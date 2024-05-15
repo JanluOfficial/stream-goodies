@@ -15,6 +15,25 @@ html {
     background-color: transparent;
 }
 
+a.back {
+    background: slategray;
+    color: white;
+    border: none;
+    min-width: 146px;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    border-radius: 12px;
+}
+
+a.back:hover {
+    background: darkslategray;
+    cursor: pointer;
+}
+
 .rootwrapper {
     display: flex;
     align-items: center;
