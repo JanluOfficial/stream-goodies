@@ -1,0 +1,232 @@
+:root {
+    --nowplaying: var(--chat);
+    --nptext: white;
+    --chat: blueviolet;
+    --streamer: lawngreen;
+}
+
+* {
+    font-family: "Inter", sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html {
+    background-color: transparent;
+}
+
+.rootwrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.wrapper {
+    background-color: lightslategray;
+    overflow: hidden;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Numbers */
+.topwrapper {
+    background-color: lightslategray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 90px;
+    height: 90px;
+}
+ 
+.topnumber {
+    background-color: darkslategray;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+
+    transition: cubic-bezier(0.2, 0, 0.1, 1) 333ms;
+    transform: scale(1);
+
+    cursor: pointer;
+}
+.wrapper.chat .topwrapper .topnumber {
+    background-color: var(--chat);
+    box-shadow: 0px 0px 16px var(--chat);
+    color: white;
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+.wrapper.streamer .topwrapper .topnumber {
+    background-color: var(--streamer);
+    box-shadow: 0px 0px 16px var(--streamer);
+    color: black;
+    transform: rotate3d(0, 0, 1, 360deg);
+}
+
+.topnumber:hover {
+    background: white !important;
+    color: black !important;
+}
+
+.topnumber:active {
+    transform: scale(0.9);
+}
+
+/* Circle */
+.playingwrapper {
+    background-color: slategray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+}
+
+.circle {
+    background: white;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    transition: cubic-bezier(0.2, 0, 0.1, 1) 150ms;
+    /* transition-property: transform, background; */
+    transform: rotate3d(0, 1, 0, 0deg);
+}
+
+.circle.chat {
+    background: var(--chat) !important;
+}
+
+.circle.streamer {
+    background: var(--streamer) !important;
+}
+
+.circle.streamer, .circle.chat {
+    transform: rotate3d(0, 1, 0, 180deg);
+}
+
+/* Options */
+div.options {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    background: lightslategray;
+    padding: 6px 8px 16px 20px;
+    gap: 20px;
+}
+
+div.pill {
+    background: slategray;
+    color: white;
+
+    height: 20px;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 4px 12px;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: cubic-bezier(0.2, 0, 0.1, 1) 150ms;
+
+    cursor: pointer;
+}
+
+div.pill.streamer {
+    background: var(--streamer);
+    box-shadow: 0px 0px 8px var(--streamer);
+    color: black;
+}
+
+div.pill.chat {
+    background: var(--chat);
+    box-shadow: 0px 0px 8px var(--chat);
+    color: white;
+}
+
+div.seperator {
+    width: 1px;
+    height: 16px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Score */
+.score {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 30px;
+    background: slategray;
+    height: 32px;
+    padding: 8px;
+}
+
+.scorePill {
+    min-width: 32px;
+    width: max-content;
+    padding: 0px 8px;
+    border-radius: 30px;
+    background: lightslategray;
+
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    transition: cubic-bezier(0.2, 0, 0.1, 1) 150ms;
+    cursor: pointer;
+}
+
+.scorePill:hover {
+    background: white !important;
+    color: black !important;
+}
+
+.scorePill.streamer {
+    background: var(--streamer);
+    color: black;
+    box-shadow: 0px 0px 8px var(--streamer);
+}
+
+.scorePill.chat {
+    background: var(--chat);
+    color: white;
+    box-shadow: 0px 0px 8px var(--chat);
+}
+
+.scorePill:active {
+    transform: scale(0.8);
+}
