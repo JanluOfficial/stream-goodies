@@ -160,7 +160,25 @@ div.seperator {
     width: 80px;
     height: 80px;
     padding: 20px;
-    overflow: hidden
+    overflow: hidden;
+
+    transition: cubic-bezier(0.2, 0, 0.1, 1) 150ms;
+}
+
+.field:hover {
+    background: #eeeeee;
+}
+
+.field:active {
+    transform: scale(0.9);
+}
+
+.field.chat:hover {
+    background: white;
+}
+
+.field.streamer:hover {
+    background: white;
 }
 
 .field div {
